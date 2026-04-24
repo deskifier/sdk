@@ -414,8 +414,6 @@ export interface SystemAPI {
   getProcessMemoryInfo(): Promise<BaseResult & { ProcessMemoryInfo?: ProcessMemoryInfo }>;
   getIdleTime(): Promise<BaseResult & { idleTime?: number }>;
   getScreenDetails(): Promise<ScreenData[]>;
-  exit(): Promise<BaseResult>;
-  setLaunchAtStartup(args: { launchAtStartUp: boolean }): Promise<BaseResult>;
 
   onDisplayAdded(handler: (display: Display) => void): Unsubscribe;
   onDisplayRemoved(handler: (display: Display) => void): Unsubscribe;

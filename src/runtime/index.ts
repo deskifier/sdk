@@ -35,6 +35,7 @@ function makeProxy<K extends keyof DeskifierAPI>(ns: K): DeskifierAPI[K] {
   });
 }
 
+export const app = makeProxy('app');
 export const windows = makeProxy('windows');
 export const menus = makeProxy('menus');
 export const tray = makeProxy('tray');

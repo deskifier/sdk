@@ -4,6 +4,7 @@
  */
 
 export * from './common';
+export * from './app';
 export * from './system';
 export * from './windows';
 export * from './menus';
@@ -24,6 +25,7 @@ export * from './autoUpdate';
 // ── Top-level DeskifierAPI interface ──────────────────────────────────────────
 
 import type { PlatformInfo, AppInfoStatic } from './common';
+import type { AppAPI } from './app';
 import type { WindowsAPI } from './windows';
 import type { MenusAPI } from './menus';
 import type { TrayAPI } from './tray';
@@ -79,6 +81,7 @@ export interface DeskifierAPI {
 
   // ── Namespaced APIs ──
 
+  app: AppAPI;
   windows: WindowsAPI;
   menus: MenusAPI;
   tray: TrayAPI;
