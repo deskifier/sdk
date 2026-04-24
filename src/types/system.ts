@@ -1,4 +1,4 @@
-import type { BaseResult, Unsubscribe, PlatformInfo, AppInfoStatic } from './common';
+import type { BaseResult, Unsubscribe, PlatformInfo } from './common';
 
 // ── Display (re-declared from Electron to avoid depending on @types/electron in the SDK) ─
 
@@ -376,16 +376,6 @@ export interface SystemDetails {
 
 // ── Convenience return shapes ─────────────────────────────────────────────────
 
-export type AppInfo = BaseResult & {
-  launchAtStartup: boolean;
-  launchedWithDeeplink: boolean;
-  deeplinkUrl: string;
-  appName: string;
-  appVersion: string;
-  appDist: string;
-  willAutoUpdate: boolean;
-};
-
 export type MemoryInfo = BaseResult & {
   total: number;
   free: number;
@@ -401,7 +391,6 @@ export type MemoryInfo = BaseResult & {
 export interface SystemAPI {
   getDetails(): Promise<BaseResult & { details?: SystemDetails }>;
   getPlatform(): Promise<PlatformInfo>;
-  getAppInfo(): Promise<AppInfo>;
   getVersion(): Promise<BaseResult & { versionSpecific?: string; versionGeneric?: string }>;
   getColor(args: { element: string }): Promise<BaseResult & { color?: string }>;
   getAccentColor(): Promise<BaseResult & { accentColor?: string }>;
@@ -419,4 +408,4 @@ export interface SystemAPI {
   onDisplayRemoved(handler: (display: Display) => void): Unsubscribe;
 }
 
-export type { PlatformInfo, AppInfoStatic };
+export type { PlatformInfo };

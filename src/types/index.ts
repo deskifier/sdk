@@ -24,7 +24,7 @@ export * from './autoUpdate';
 
 // ── Top-level DeskifierAPI interface ──────────────────────────────────────────
 
-import type { PlatformInfo, AppInfoStatic } from './common';
+import type { PlatformInfo } from './common';
 import type { AppAPI } from './app';
 import type { WindowsAPI } from './windows';
 import type { MenusAPI } from './menus';
@@ -50,11 +50,11 @@ import type { AutoUpdateAPI } from './autoUpdate';
  * methods and events each namespace exposes.
  */
 export interface DeskifierAPI {
-  /** Static platform flags. */
+  /**
+   * Static platform flags (synchronous).
+   * App metadata is available asynchronously via `app.getAppInfo()`.
+   */
   platform: PlatformInfo;
-
-  /** Static app metadata (name, version, distribution, deeplink URL). */
-  appInfo: AppInfoStatic;
 
   // ── Escape hatches (legacy, for backwards compatibility) ──
 

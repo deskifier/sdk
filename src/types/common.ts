@@ -18,17 +18,6 @@ export type PlatformInfo = {
   isLinux: boolean;
 };
 
-/** Metadata about the running Deskifier app — available synchronously via `window.deskifier.appInfo`. */
-export type AppInfoStatic = {
-  appName: string;
-  appVersion: string;
-  appBuild: string;
-  launchAtStartup: boolean;
-  launchedWithDeeplink: boolean;
-  deeplinkUrl: string;
-  autoUpdatesEnabled: boolean;
-};
-
 /** Distribution type the app was built as. */
 export type DistributionType =
   | 'DEV'
