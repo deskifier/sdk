@@ -1,13 +1,17 @@
 import type { BaseResult } from './common';
 
+/**
+ * Response shape of `app.getAppInfo()`. Always reflects the current
+ * main-process state at the moment of the call.
+ */
 export type AppInfo = BaseResult & {
-  appName: string;
-  appVersion: string;
-  appDist: string;
-  launchAtStartup: boolean;
-  launchedWithDeeplink: boolean;
-  deeplinkUrl: string;
-  willAutoUpdate: boolean;
+  appName?: string;
+  appVersion?: string;
+  appDist?: string;
+  launchAtStartup?: boolean;
+  launchedWithDeeplink?: boolean;
+  deeplinkUrl?: string;
+  willAutoUpdate?: boolean;
 };
 
 /**
@@ -21,8 +25,9 @@ export interface AppAPI {
   setLaunchAtStartup(args: { launchAtStartup: boolean }): Promise<BaseResult>;
 
   /**
-   * Returns metadata about the running app — name, version, distribution
-   * type, deeplink state, and whether auto-updates are enabled.
+   * Returns current app metadata. **Synchronous** — safe to call in contexts
+   * that require immediate values (e.g. plugin state initializers). Each call
+   * reads live values, so the result is always fresh.
    */
-  getAppInfo(): Promise<AppInfo>;
+  getAppInfo(): AppInfo;
 }
