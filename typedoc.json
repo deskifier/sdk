@@ -1,0 +1,22 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "src/index.ts"
+  ],
+  "entryPointStrategy": "expand",
+  "out": "../docs/api-reference/generated",
+  "plugin": [
+    "typedoc-plugin-markdown"
+  ],
+  "readme": "none",
+  "hideBreadcrumbs": true,
+  "hidePageTitle": false,
+  "hideInPageTOC": false,
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "disableSources": true,
+  "name": "@deskifier/sdk",
+  "githubPages": false,
+  "gitRevision": "main"
+}
