@@ -67,6 +67,54 @@ export interface WindowProperties {
     | null;
   /** Windows 11+: background material (mica, acrylic, etc.). */
   backgroundMaterial?: 'auto' | 'none' | 'mica' | 'acrylic' | 'tabbed';
+  /** Toggle the Cmd/Ctrl+F find-in-page bar at runtime (per-window). */
+  findInPage?: boolean;
+  /** Toggle the built-in spell checker. Note: spell-check is session-level, so
+   *  this affects windows sharing the same session. */
+  spellcheck?: boolean;
+  /** Toggle this window's right-click menus (default + custom) at runtime. When
+   *  false, neither the default items nor any custom context menus fire. */
+  contextMenuEnabled?: boolean;
+}
+
+// ── Page features (context menus) ─────────────────────────────────────────────
+
+/** Which built-in items the default right-click menu shows (copy, save image,
+ *  look up, spell-check suggestions, …). Omitted flags default to on. */
+export interface DefaultContextMenuItems {
+  showCopyLink?: boolean;
+  showCopyImage?: boolean;
+  showSaveImage?: boolean;
+  showSaveImageAs?: boolean;
+  showSaveVideo?: boolean;
+  showSaveVideoAs?: boolean;
+  showSaveLinkAs?: boolean;
+  showCopyImageAddress?: boolean;
+  showCopyVideoAddress?: boolean;
+  showSelectAll?: boolean;
+  showLearnSpelling?: boolean;
+  showLookUpSelection?: boolean;
+  showSearchWithGoogle?: boolean;
+}
+
+/** A custom menu (by its per-app `menuId` slug) shown on right-click, optionally
+ *  limited to elements matching a CSS selector. Empty `selectors` = show on any
+ *  right-click. */
+export interface WindowContextMenuBinding {
+  menuId: string;
+  selectors: string[];
+}
+
+/**
+ * A window's complete right-click configuration:
+ *  - `enabled`: master switch — when false, NO menus fire (default or custom).
+ *  - `defaultItems`: which built-in browser items appear.
+ *  - `menus`: your custom menu-template menus, selector-targeted.
+ */
+export interface WindowContextMenuConfig {
+  enabled?: boolean;
+  defaultItems?: DefaultContextMenuItems;
+  menus?: WindowContextMenuBinding[];
 }
 
 // ── ConstructorOptions (creation-time options) ────────────────────────────────
@@ -96,6 +144,16 @@ export interface ConstructorOptions {
   center?: boolean;
   /** Delay show until content has loaded (calls `window.show()` on `did-finish-load`). */
   showAfterLoading?: boolean;
+
+  // ── Page features (also configurable per-window in the dashboard) ──────────
+  /** Attach the Cmd/Ctrl+F find-in-page bar to this window. */
+  findInPage?: boolean;
+  /** Enable the built-in spell checker (red-squiggle in editable fields). */
+  spellcheck?: boolean;
+  /** Right-click menu config: `enabled` master switch, `defaultItems` (which
+   *  built-in items show), and `menus` (custom menu-template menus, selector-
+   *  targeted). Null/omitted = default menu on, all items on, no custom menus. */
+  contextMenu?: WindowContextMenuConfig | null;
 }
 
 // ── Event payloads ────────────────────────────────────────────────────────────
