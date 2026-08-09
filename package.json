@@ -1,6 +1,6 @@
 {
   "name": "@deskifier/sdk",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "TypeScript SDK for building apps on the Deskifier desktop platform",
   "type": "module",
   "main": "./dist/index.js",
@@ -11,7 +11,12 @@
       "import": "./dist/index.js"
     },
     "./global": {
-      "types": "./dist/global.d.ts"
+      "types": "./dist/global.d.ts",
+      "import": "./dist/global.js"
+    },
+    "./runtime": {
+      "types": "./dist/runtime/index.d.ts",
+      "import": "./dist/runtime/index.js"
     }
   },
   "files": [
@@ -36,13 +41,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tim12333/deskifier.git",
-    "directory": "sdk"
+    "url": "https://github.com/deskifier/sdk.git"
   },
   "devDependencies": {
     "typescript": "^5.3.3",
     "rimraf": "^5.0.5",
     "typedoc": "^0.25.7",
     "typedoc-plugin-markdown": "^3.17.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
