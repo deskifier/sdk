@@ -14,8 +14,8 @@
  * friendly form and a guard.
  */
 
-import { assertDeskifier } from './guard';
-import type { DeskifierAPI } from '../types';
+import { assertDeskifier } from './guard.js';
+import type { DeskifierAPI } from '../types/index.js';
 
 function api(): DeskifierAPI {
   assertDeskifier();
@@ -53,4 +53,4 @@ export const webSocket = makeProxy('webSocket');
 export const dialog = makeProxy('dialog');
 export const autoUpdate = makeProxy('autoUpdate');
 
-export { isDeskifier, assertDeskifier } from './guard';
+export { isDeskifier, assertDeskifier } from './guard.js';

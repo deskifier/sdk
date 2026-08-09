@@ -14,7 +14,7 @@
  * older builds, feature-detect first: `if (window.deskifier.webviews) { ... }`.
  */
 
-import type { BaseResult, Unsubscribe } from './common';
+import type { BaseResult, Unsubscribe } from './common.js';
 
 /** Absolute pixel rectangle inside the host window. */
 export interface WebviewBounds {

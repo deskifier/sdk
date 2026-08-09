@@ -1,5 +1,5 @@
-import type { BaseResult } from './common';
-import type { FileFilter } from './filesystem';
+import type { BaseResult } from './common.js';
+import type { FileFilter } from './filesystem.js';
 
 export type OpenDialogOptions = {
   title?: string;

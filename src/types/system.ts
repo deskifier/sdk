@@ -1,4 +1,4 @@
-import type { BaseResult, Unsubscribe, PlatformInfo } from './common';
+import type { BaseResult, Unsubscribe, PlatformInfo } from './common.js';
 
 // ── Display (re-declared from Electron to avoid depending on @types/electron in the SDK) ─
 

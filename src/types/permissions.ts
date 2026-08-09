@@ -1,4 +1,4 @@
-import type { BaseResult } from './common';
+import type { BaseResult } from './common.js';
 
 export type PermissionName = 'camera' | 'microphone' | 'screenSharing' | 'accessiblity';
 

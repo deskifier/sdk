@@ -1,4 +1,4 @@
-import type { BaseResult } from './common';
+import type { BaseResult } from './common.js';
 
 /**
  * Response shape of `app.getAppInfo()`. Always reflects the current

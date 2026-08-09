@@ -1,4 +1,4 @@
-import type { Unsubscribe } from './common';
+import type { Unsubscribe } from './common.js';
 
 export type DeeplinkPayload = { url: string };
 

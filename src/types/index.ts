@@ -3,47 +3,47 @@
  * (or from `@deskifier/sdk` directly) for any type you need.
  */
 
-export * from './common';
-export * from './app';
-export * from './system';
-export * from './windows';
-export * from './webviews';
-export * from './menus';
-export * from './tray';
-export * from './applications';
-export * from './printers';
-export * from './shortcuts';
-export * from './deeplink';
-export * from './permissions';
-export * from './notifications';
-export * from './purchases';
-export * from './dock';
-export * from './filesystem';
-export * from './webSocket';
-export * from './dialog';
-export * from './autoUpdate';
+export * from './common.js';
+export * from './app.js';
+export * from './system.js';
+export * from './windows.js';
+export * from './webviews.js';
+export * from './menus.js';
+export * from './tray.js';
+export * from './applications.js';
+export * from './printers.js';
+export * from './shortcuts.js';
+export * from './deeplink.js';
+export * from './permissions.js';
+export * from './notifications.js';
+export * from './purchases.js';
+export * from './dock.js';
+export * from './filesystem.js';
+export * from './webSocket.js';
+export * from './dialog.js';
+export * from './autoUpdate.js';
 
 // ── Top-level DeskifierAPI interface ──────────────────────────────────────────
 
-import type { PlatformInfo } from './common';
-import type { AppAPI } from './app';
-import type { WindowsAPI } from './windows';
-import type { WebviewsAPI } from './webviews';
-import type { MenusAPI } from './menus';
-import type { TrayAPI } from './tray';
-import type { SystemAPI } from './system';
-import type { ApplicationsAPI } from './applications';
-import type { PrintersAPI } from './printers';
-import type { ShortcutsAPI } from './shortcuts';
-import type { DeeplinkAPI } from './deeplink';
-import type { PermissionsAPI } from './permissions';
-import type { NotificationsAPI } from './notifications';
-import type { PurchasesAPI } from './purchases';
-import type { DockAPI } from './dock';
-import type { FilesystemAPI } from './filesystem';
-import type { WebSocketAPI } from './webSocket';
-import type { DialogAPI } from './dialog';
-import type { AutoUpdateAPI } from './autoUpdate';
+import type { PlatformInfo } from './common.js';
+import type { AppAPI } from './app.js';
+import type { WindowsAPI } from './windows.js';
+import type { WebviewsAPI } from './webviews.js';
+import type { MenusAPI } from './menus.js';
+import type { TrayAPI } from './tray.js';
+import type { SystemAPI } from './system.js';
+import type { ApplicationsAPI } from './applications.js';
+import type { PrintersAPI } from './printers.js';
+import type { ShortcutsAPI } from './shortcuts.js';
+import type { DeeplinkAPI } from './deeplink.js';
+import type { PermissionsAPI } from './permissions.js';
+import type { NotificationsAPI } from './notifications.js';
+import type { PurchasesAPI } from './purchases.js';
+import type { DockAPI } from './dock.js';
+import type { FilesystemAPI } from './filesystem.js';
+import type { WebSocketAPI } from './webSocket.js';
+import type { DialogAPI } from './dialog.js';
+import type { AutoUpdateAPI } from './autoUpdate.js';
 
 /**
  * The full shape of `window.deskifier` inside a Deskifier-wrapped app.

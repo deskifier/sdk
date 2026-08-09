@@ -4,7 +4,7 @@
  * you full typing on `window.deskifier` everywhere.
  */
 
-import type { DeskifierAPI } from './types';
+import type { DeskifierAPI } from './types/index.js';
 
 declare global {
   interface Window {

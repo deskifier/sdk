@@ -1,9 +1,9 @@
-import type { BaseResult } from './common';
-import type { SystemPrinterBase } from './system';
+import type { BaseResult } from './common.js';
+import type { SystemPrinterBase } from './system.js';
 
 // Re-export so users can `import { SystemPrinter } from '@deskifier/sdk'`
 export type SystemPrinter = SystemPrinterBase;
-export type { PrinterStatus } from './system';
+export type { PrinterStatus } from './system.js';
 
 export type Margins = {
   marginType?: 'default' | 'none' | 'printableArea' | 'custom';

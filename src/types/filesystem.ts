@@ -1,4 +1,4 @@
-import type { BaseResult, Unsubscribe } from './common';
+import type { BaseResult, Unsubscribe } from './common.js';
 
 export interface FileInfo {
   name: string;

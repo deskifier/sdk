@@ -1,5 +1,5 @@
-import type { BaseResult, Unsubscribe } from './common';
-import type { Rectangle } from './system';
+import type { BaseResult, Unsubscribe } from './common.js';
+import type { Rectangle } from './system.js';
 
 // ── WindowProperties (runtime-updatable state) ────────────────────────────────
 

@@ -1,4 +1,4 @@
-import type { BaseResult, Unsubscribe } from './common';
+import type { BaseResult, Unsubscribe } from './common.js';
 
 export type WebSocketServerStatus = {
   isRunning: boolean;

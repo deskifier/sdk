@@ -29,10 +29,10 @@
  */
 
 // Register the ambient `window.deskifier` declaration.
-import './global';
+import './global.js';
 
 // Re-export all public types.
-export * from './types';
+export * from './types/index.js';
 
 // Re-export the named-import runtime wrappers + guards.
-export * from './runtime';
+export * from './runtime/index.js';
