@@ -6,11 +6,26 @@ export type MenuAttachmentType = 'menuBar' | 'contextMenu' | 'trayMenu' | 'dockM
 export type Accelerator = string;
 
 /** A single menu item. Mirrors Electron's MenuItemConstructorOptions with a few additions. */
+/** Built-in menu behaviors (mirrors Electron's `MenuItemConstructorOptions.role`). */
+export type MenuItemRole =
+  | 'undo' | 'redo' | 'cut' | 'copy' | 'paste' | 'pasteAndMatchStyle' | 'delete'
+  | 'selectAll' | 'reload' | 'forceReload' | 'toggleDevTools' | 'resetZoom'
+  | 'zoomIn' | 'zoomOut' | 'toggleSpellChecker' | 'togglefullscreen' | 'window'
+  | 'minimize' | 'close' | 'help' | 'about' | 'services' | 'hide' | 'hideOthers'
+  | 'unhide' | 'quit' | 'showSubstitutions' | 'toggleSmartQuotes'
+  | 'toggleSmartDashes' | 'toggleTextReplacement' | 'startSpeaking'
+  | 'stopSpeaking' | 'zoom' | 'front' | 'appMenu' | 'fileMenu' | 'editMenu'
+  | 'viewMenu' | 'shareMenu' | 'recentDocuments' | 'toggleTabBar'
+  | 'selectNextTab' | 'selectPreviousTab' | 'showAllTabs' | 'mergeAllWindows'
+  | 'clearRecentDocuments' | 'moveTabToNewWindow' | 'windowMenu';
+
 export interface MenuItemOptions {
   id?: string;
   label?: string;
-  role?: string;
+  role?: MenuItemRole;
   type?: 'normal' | 'separator' | 'submenu' | 'checkbox' | 'radio';
+  /** Reference a dashboard-defined menu template by its per-app slug. */
+  templateId?: string;
   enabled?: boolean;
   visible?: boolean;
   checked?: boolean;

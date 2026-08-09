@@ -7,6 +7,7 @@ export * from './common';
 export * from './app';
 export * from './system';
 export * from './windows';
+export * from './webviews';
 export * from './menus';
 export * from './tray';
 export * from './applications';
@@ -27,6 +28,7 @@ export * from './autoUpdate';
 import type { PlatformInfo } from './common';
 import type { AppAPI } from './app';
 import type { WindowsAPI } from './windows';
+import type { WebviewsAPI } from './webviews';
 import type { MenusAPI } from './menus';
 import type { TrayAPI } from './tray';
 import type { SystemAPI } from './system';
@@ -83,6 +85,8 @@ export interface DeskifierAPI {
 
   app: AppAPI;
   windows: WindowsAPI;
+  /** Embedded web content inside a window (template v3.0.5+; feature-detect in older apps). */
+  webviews: WebviewsAPI;
   menus: MenusAPI;
   tray: TrayAPI;
   system: SystemAPI;

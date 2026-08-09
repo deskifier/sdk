@@ -43,18 +43,15 @@ export interface WindowProperties {
     symbolColor?: string;
     height?: number;
   };
-  /** macOS: vibrancy (blur) material. */
+  /** macOS: vibrancy (blur) material. (Runtime property — only the modern
+   *  material names; the deprecated `appearance-based`/`light`/`dark` family
+   *  is constructor-only in Electron and not accepted here.) */
   vibrancy?:
-    | 'appearance-based'
-    | 'light'
-    | 'dark'
     | 'titlebar'
     | 'selection'
     | 'menu'
     | 'popover'
     | 'sidebar'
-    | 'medium-light'
-    | 'ultra-dark'
     | 'header'
     | 'sheet'
     | 'window'
@@ -167,20 +164,23 @@ export type WindowMessagePayload = { fromWindowId: string; message: string };
 type WindowIdArg = { windowId?: string };
 
 export interface WebContentsProperties {
-  isDevToolsOpened: boolean;
-  isDevToolsFocused: boolean;
-  isLoading: boolean;
-  isWaitingForResponse: boolean;
-  currentURL: string;
-  canGoBack: boolean;
-  canGoForward: boolean;
-  zoomFactor: number;
+  devToolsOpen: boolean;
+  /** Current zoom factor (1 = 100%). */
   zoomLevel: number;
-  [key: string]: unknown;
+  url: string;
+  title: string;
+  loading: boolean;
+  canNavigateBack: boolean;
+  canNavigateForward: boolean;
 }
 
 export interface WindowsAPI {
-  create(options: { constructorOptions: ConstructorOptions; windowProperties: WindowProperties }): Promise<BaseResult & { windowId?: string }>;
+  create(options: {
+    /** Spawn from a dashboard-defined window template (by its per-app slug). */
+    templateId?: string;
+    constructorOptions?: ConstructorOptions;
+    windowProperties?: WindowProperties;
+  }): Promise<BaseResult & { windowId?: string }>;
   destroy(args: { windowId: string }): Promise<BaseResult>;
   focus(args?: WindowIdArg): Promise<BaseResult>;
   blur(args?: WindowIdArg): Promise<BaseResult>;

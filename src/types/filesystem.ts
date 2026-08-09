@@ -2,11 +2,13 @@ import type { BaseResult, Unsubscribe } from './common';
 
 export interface FileInfo {
   name: string;
-  extension: string;
-  directory: string;
-  path: string;
-  isFile: boolean;
   isDirectory: boolean;
+  isFile: boolean;
+  /** Extension including the dot (e.g. `.txt`); empty for directories. */
+  fileExtension: string;
+  /** Directory containing this entry. */
+  directory: string;
+  fullPath: string;
 }
 
 export type DefaultDirectories = {

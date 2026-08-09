@@ -1,6 +1,6 @@
 {
   "name": "@deskifier/sdk",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.4",
   "description": "TypeScript SDK for building apps on the Deskifier desktop platform",
   "type": "module",
   "main": "./dist/index.js",
@@ -22,8 +22,9 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "prepublishOnly": "npm run clean && npm run build",
-    "docs:build": "typedoc"
+    "prepublishOnly": "npm run clean && npm run build && npm run check:parity",
+    "docs:build": "typedoc",
+    "check:parity": "tsc -p tsconfig.parity.json"
   },
   "keywords": [
     "deskifier",
