@@ -1,6 +1,6 @@
 import type { BaseResult } from './common.js';
 
-export type PermissionName = 'camera' | 'microphone' | 'screenSharing' | 'accessiblity';
+export type PermissionName = 'camera' | 'microphone' | 'screenSharing' | 'accessibility';
 
 export type SettingsTarget = 'camera' | 'microphone' | 'screenSharing' | 'accessibility' | 'notification';
 
